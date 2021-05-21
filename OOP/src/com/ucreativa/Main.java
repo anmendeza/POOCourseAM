@@ -1,8 +1,12 @@
 package com.ucreativa;
 
+import com.ucreativa.familia.Andrea;
+
 public class Main {
 
     public static void main(String[] args) {
-	System.out.println("Hello world");
+
+        Andrea smart = new Andrea();
+
     }
 }
