@@ -10,7 +10,7 @@ public class Yoryi {                    // esto es una clase
         this.edad = 59;
         System.out.println(saludo);
     }
-    public void setCumple(){            // esto es un metodo set
+    public void setCumple(){            // esto es un metodo set || void es un metodo que no retorna nada
         this.edad = this.edad + 1;      // esto esta reasignando el valor de edad
     }
 

@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Andrea yo = new Andrea( "Hola", 23);    //estos es un objeto con attributos reasignados
+        Andrea yo = new Andrea( "Hola! Soy Andrea, tengo ", 23);    //estos es un objeto con attributos reasignados
 
         Yoryi mama = new Yoryi("Hola! Yo soy Georgina");
 
