@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Andrea yo = new Andrea( "Hola! Soy Andrea, tengo ", 23);    //estos es un objeto con attributos reasignados
+        Andrea yo = new Andrea( "Hola! Soy Andrea, tengo ", 23, "Peliculas");    //estos es un objeto con attributos reasignados
 
-        Yoryi mama = new Yoryi("Hola! Yo soy Georgina");
+        Yoryi mama = new Yoryi("Hola! Yo soy Georgina", 59, "Macrame");
 
         mama.setCumple();       // esto es un metodo set
 

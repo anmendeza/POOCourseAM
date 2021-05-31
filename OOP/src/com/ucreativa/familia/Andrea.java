@@ -1,10 +1,9 @@
 package com.ucreativa.familia;
 
-public class Andrea {
+public class Andrea extends Yoryi {         //extends hace que la primera clase Andrea herede la segunda clase Yoryi
 
-    public int edad;                            //esto es una variable
-    public Andrea(String saludar, int edad)     // esto es un objeto con atributos
-    {
-        System.out.println(saludar + edad + " años");
+
+    public Andrea(String saludo, int edad, String hobby) {
+        super(saludo, edad, hobby);         //super hace que los atributos de la clase Yoryi se instancien en la clase Andrea
     }
 }
