@@ -1,21 +1,35 @@
 package com.ucreativa;
 
-import com.ucreativa.familia.Andrea;
-import com.ucreativa.familia.Yoryi;
+import com.ucreativa.vacunacion.entities.Amigo;
+import com.ucreativa.vacunacion.entities.BitacoraVacunas;
+import com.ucreativa.vacunacion.entities.Familiar;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Andrea yo = new Andrea( "Hola! Soy Andrea, tengo ", 23, "Peliculas");    //estos es un objeto con attributos reasignados
+        Familiar mama = new Familiar("Yoryi", "203750552", 59,
+                true, "mama");
+                                                                                                //estos son objetos
 
-        Yoryi mama = new Yoryi("Hola! Yo soy Georgina", 59, "Macrame");
+        Familiar esposo = new Familiar("Oscar", "207160430", 27,
+                false, "hermano");
 
-        mama.setCumple();       // esto es un metodo set
 
-        int edad = mama.getEdad();        //esto es un metodo get
+        Amigo amigoTrabajo = new Amigo("Badir", "0001000010001", 23,
+                false, "trabajo", "bvillarroel");
 
-        System.out.println("Tengo " + mama.getEdad() + " años cumplidos");
+        List<BitacoraVacunas> bitacora = new ArrayList<>();
+        bitacora.add(new BitacoraVacunas(esposo, "AstraZenca", new Date(), "Quesada"));
+        bitacora.add(new BitacoraVacunas(mama, "AstraZenca", new Date(), "Quesada"));
+        bitacora.add(new BitacoraVacunas(amigoTrabajo, "AstraZenca", new Date(), "Cochabamba"));
+
+
+
     }
 }

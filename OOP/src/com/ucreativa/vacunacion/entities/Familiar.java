@@ -1,11 +1,11 @@
-package com.ucreativa.vacunacion;
+package com.ucreativa.vacunacion.entities;
 
 public class Familiar extends Persona {          //Aqui el extends hace que la clase "Familiar" herede de la clase "Persona"
 
     private String parentesco;       //Esto es un atributo unico de la clase "Familiar"
 
-    public Familiar(String nombre, String cedula, int edad, boolean riesgo, boolean riesgo1, String parentesco) {
-        super(nombre, cedula, edad, riesgo, riesgo1); //Aqui, esta instanciando los atributos de la clase "Persona" de manera que "Familiar" los hereda
+    public Familiar(String nombre, String cedula, int edad, boolean riesgo, String parentesco) {
+        super(nombre, cedula, edad, riesgo); //Aqui, esta instanciando los atributos de la clase "Persona" de manera que "Familiar" los hereda
         this.parentesco = parentesco;
     }
 

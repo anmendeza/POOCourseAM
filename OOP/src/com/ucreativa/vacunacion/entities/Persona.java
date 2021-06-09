@@ -1,4 +1,4 @@
-package com.ucreativa.vacunacion;
+package com.ucreativa.vacunacion.entities;
 
 public class Persona {
     private String nombre;          //aqui se agregan los atributos de la clase
@@ -8,7 +8,7 @@ public class Persona {
 
 
 
-    public Persona(String nombre, String cedula, int edad, boolean riesgo, boolean riesgo1) {
+    public Persona(String nombre, String cedula, int edad, boolean riesgo) {
         this.nombre = nombre;
         this.cedula = cedula;               //Estos son los constructores para los atributos
         this.edad = edad;
