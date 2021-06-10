@@ -3,33 +3,68 @@ package com.ucreativa;
 import com.ucreativa.vacunacion.entities.Amigo;
 import com.ucreativa.vacunacion.entities.BitacoraVacunas;
 import com.ucreativa.vacunacion.entities.Familiar;
+import com.ucreativa.vacunacion.entities.Persona;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+import java.util.Scanner;               //esto es la libreria de escaner
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Familiar mama = new Familiar("Yoryi", "203750552", 59,
-                true, "mama");
-                                                                                                //estos son objetos
+        Scanner in = new Scanner(System.in);        //asi se escanea
 
-        Familiar esposo = new Familiar("Oscar", "207160430", 27,
-                false, "hermano");
+        List<BitacoraVacunas> db = new ArrayList<>();
+        while(true) {
+            String nombre, cedula, edad, riesgo, isAmigo, relacion, facebook, parentesco, marca, lugar;
+            Persona persona;
+            System.out.println("Nombre:");
+            nombre = in.nextLine();
 
+            System.out.println("Cedula:");
+            cedula = in.nextLine();
 
-        Amigo amigoTrabajo = new Amigo("Badir", "0001000010001", 23,
-                false, "trabajo", "bvillarroel");
+            System.out.println("Edad:");
+            edad = in.nextLine();
 
-        List<BitacoraVacunas> bitacora = new ArrayList<>();
-        bitacora.add(new BitacoraVacunas(esposo, "AstraZenca", new Date(), "Quesada"));
-        bitacora.add(new BitacoraVacunas(mama, "AstraZenca", new Date(), "Quesada"));
-        bitacora.add(new BitacoraVacunas(amigoTrabajo, "AstraZenca", new Date(), "Cochabamba"));
+            System.out.println("Riesgo(S/N):");
+            riesgo = in.nextLine();
 
+            System.out.println("Amigo(A)/Familiar(F):");
+            isAmigo = in.nextLine();                //Aqui esta usando equals por que necesita comparar
+            if (isAmigo.equals("A")) {                //la A como objeto y no como String en memoria
+                System.out.println("Relacion:");
+                relacion = in.nextLine();
+                System.out.println("Facebook:");
+                facebook = in.nextLine();
 
+                persona = new Amigo(nombre, cedula, Integer.parseInt(edad), riesgo.equals("S"), relacion, facebook);
+                //aca se utiliza Interger.parseInt por que edad no es una variable de tipo string
+                //es una variable de tipo int, y al estar con strings da error
 
+                //Tambien, se utiliza riesgo.equals por que riesgo es de tipo boolean
+            } else {
+                    System.out.println("Parentesco:");
+                    parentesco = in.nextLine();
+                    persona = new Familiar(nombre, cedula, Integer.parseInt(edad), riesgo.equals("S"), parentesco);
+            }
+            System.out.println("Marca de vacuna");
+            marca = in.nextLine();
+
+            System.out.println("Lugar de vacunacion");
+            lugar = in.nextLine();
+
+            db.add(new BitacoraVacunas(persona, marca, new Date(), lugar));
+
+            System.out.println("Quiere imprimir lista? (S)");
+            String print = in.nextLine();
+            if (print.equals("S")){
+                for (BitacoraVacunas item: db){
+                    System.out.println(item.getPersona().getNombre() + " vacunado el " + item.getFecha());
+                }
+            }
+        }
     }
 }
