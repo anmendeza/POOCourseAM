@@ -10,7 +10,7 @@ import java.util.List;
 
 public class InMemoryRepository implements Repository  {
 
-    private List<BitacoraVacunas> db;
+    private final List<BitacoraVacunas> db;
 
     public InMemoryRepository(){
     this.db = new ArrayList<>();
@@ -21,11 +21,15 @@ public class InMemoryRepository implements Repository  {
 
     }
 
-    @Override
     public List<String> get() {
-        return null;
+        List<String> lines = new ArrayList<>();
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        for (BitacoraVacunas item : db){
+            lines.add(item.getPersona().getNombre()
+                + " - " + item.getMarca()
+                + " - " + format.format(item.getFecha()));
+        }
+        return lines;
     }
 
-
 }
-
