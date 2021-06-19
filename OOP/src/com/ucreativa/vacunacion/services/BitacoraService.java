@@ -23,7 +23,7 @@ public class BitacoraService {
 
         Persona persona;
         if(isAmigo){
-            persona = new Amigo(nombre, cedula, edad,riesgo, relacion, facebook);
+            persona = new Amigo(nombre, cedula, edad, riesgo, relacion, facebook);
         }else{
             persona = new Familiar(nombre,cedula, edad, riesgo, parentesco);
         }
